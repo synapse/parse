@@ -1,0 +1,35 @@
+{
+    "attributes": {
+        "name": "MyFormX",
+        "action": "/some/nice/url"
+    },
+    "fields": [
+        {
+            "type": "text",
+            "value": "some nice text",
+            "default": "default value",
+            "message": "This field is required",
+            "options": {
+                "label": "My Awesome input"
+            },
+            "attributes": {
+                "name": "my-input",
+                "required": "true",
+                "class": "form-control",
+                "placeholder": "the placeholder",
+                "id": "some-id"
+            },
+            "validators": [
+                {
+                    "type": "email",
+                    "message": "You must enter a valid email address"
+                },
+                {
+                    "type": "unique",
+                    "message": "There is already an email in the db"
+                }
+            ],
+            "filter": "integer"
+        }
+    ]
+}

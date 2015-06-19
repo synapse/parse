@@ -1,0 +1,10 @@
+{
+    "5eb63bbbe01eeed093cb22bb8f5acdc3": {
+        "original": "Hello world",
+        "translations": {
+            "en": "Hello world in english",
+            "ro": "Salut lume in romana",
+            "it": "Ciao mondo in italiano"
+        }
+    }
+}

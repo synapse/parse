@@ -1,0 +1,35 @@
+{
+    "a6105c0a611b41b08f1209506350279e": {
+        "original": "Yes",
+        "translations": {
+            "en": "Yes",
+            "it": "Si"
+        }
+    },
+    "7fa3b767c460b54a2be4d49030b349c7": {
+        "original": "No",
+        "translations": {
+            "en": "No"
+        }
+    },
+    "a7e31a037f522b2146900365c25db63d": {
+        "original": "Invalid language code: {1}",
+        "translations": {
+            "en": "Invalid language code: {1}"
+        }
+    },
+
+    "467b6140fe3bb958f2332983914de787": {
+        "original": "January",
+        "translations": {
+            "en": "January"
+        }
+    },
+
+    "8eb8e307a6d649bc7fb51443a06a216f": {
+        "original": "February",
+        "translations": {
+            "en": "February"
+        }
+    }
+}
