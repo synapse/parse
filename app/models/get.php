@@ -4,21 +4,19 @@ Class GetModel extends Model {
 
 
 	/*
-
 	empty	Equal to
 	!  		Not equal to
 	<   	Less than
 	>   	Greater than
-
-	<=  	Less than or equal to
-	>=  	Greater than or equal to
+	-		Less than or equal to
+	+		Greater than or equal to
 	*		Contains one of the items (should be separated by |
 	%  		Contains the exact word or phrase (using slower SQL LIKE) [v2.1]
 	^  		Contains the exact word or phrase at the beginning of the field [v2.1]
 	$  		Contains the exact word or phrase at the end of the field [v2.1]
-
 	*/
-	private $comparators	= array( '!', '<', '>', '%', '^', '$');
+
+	private $comparators	= array( '!', '<', '>', '-', '+', '%', '^', '$');
 	private $keys			= array('_include', '_require', '_limit', '_offset', '_order');
 
 
@@ -250,7 +248,6 @@ Class GetModel extends Model {
 	{
 		$multi = count(explode("|", $value)) ? true : false;
 
-
 		if(in_array(substr($key, -1), $this->comparators))
 		{
 			switch(substr($key, -1))
@@ -263,6 +260,12 @@ Class GetModel extends Model {
 					break;
 				case '<':
 					$comp = '<';
+					break;
+				case '-':
+					$comp = '<=';
+					break;
+				case '+':
+					$comp = '>=';
 					break;
 				case '*':
 					$comp = 'IN';
