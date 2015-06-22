@@ -3,7 +3,7 @@
 /**
  * @package     Synapse
  * @subpackage  Helpers/User
- * @ver 1.2.0
+ * @ver 1.2.1
  */
 
 defined('_INIT') or die;
@@ -18,15 +18,18 @@ class UserHelper
      * @return bool|mixed
      * @throws Error
      */
-    public static function login($username, $password, $table = null)
+    public static function login($username, $password, $table = null, $usernameField = null, $passwordField = null)
     {
         $db = App::getDBO();
         if(!$db) return;
 
+        $usernameCol = $usernameField ? $usernameField : 'username';
+        $passwordCol = $passwordField ? $passwordField : 'password';
+
         $query = $db->getQuery(true);
         $query->select('*')
-            ->where('username = '.$db->quote($username))
-            ->where('password = '. $db->quote($password));
+            ->where($db->quoteName($usernameCol).' = '.$db->quote($username))
+            ->where($db->quoteName($passwordCol).' = '. $db->quote($password));
 
         if($table) {
             $query->from('#__'.$table);
